@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbActivities">
+  <DataContextMoniker Name="/dbActivitiesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ae51a312-caaf-4813-bebd-74391ee53401" absoluteBounds="0.75, 1.5, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/dbActivitiesDataContext/tbl_activity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3403783-d7c3-4b46-8b0d-ee49c39ed1bf" absoluteBounds="0.765, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5de75ecb-42f8-43c9-9638-a5beb76491f8" absoluteBounds="0.75, 5.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbActivitiesDataContext/tbl_vessel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5eda43d-448b-43cc-bfcb-1ae5ca8f62c8" absoluteBounds="0.765, 5.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72aed787-b725-4e7e-90ef-68b008087c90" absoluteBounds="4.125, 1.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbActivitiesDataContext/tbl_vessel_activity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5d8192a-9935-4ed5-a10b-a0b5704cd34d" absoluteBounds="4.14, 1.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.19314697265625); (4.125 : 2.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbActivitiesDataContext/tbl_activity/tbl_activity_tbl_vessel_activity" />
+      <nodes>
+        <classShapeMoniker Id="ae51a312-caaf-4813-bebd-74391ee53401" />
+        <classShapeMoniker Id="72aed787-b725-4e7e-90ef-68b008087c90" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.16429768880208); (5.125 : 6.16429768880208); (5.125 : 4.23240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbActivitiesDataContext/tbl_vessel/tbl_vessel_tbl_vessel_activity" />
+      <nodes>
+        <classShapeMoniker Id="5de75ecb-42f8-43c9-9638-a5beb76491f8" />
+        <classShapeMoniker Id="72aed787-b725-4e7e-90ef-68b008087c90" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

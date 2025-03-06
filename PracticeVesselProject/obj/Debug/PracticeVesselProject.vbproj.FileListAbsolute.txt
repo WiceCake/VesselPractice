@@ -1,0 +1,13 @@
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\bin\Debug\PracticeVesselProject.exe
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\bin\Debug\PracticeVesselProject.pdb
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.mainFrm.resources
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.Resources.resources
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.vbproj.GenerateResource.Cache
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.exe.licenses
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.exe
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.pdb
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\bin\Debug\PracticeVesselProject.exe.config
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.frmAddActivity.resources
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.vbprojResolveAssemblyReference.cache
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.ucBase.resources
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.ucAct.resources

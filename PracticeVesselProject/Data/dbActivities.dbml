@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_activities" Class="dbActivitiesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=db_activities;Integrated Security=True" SettingsObjectName="PracticeVesselProject.Settings" SettingsPropertyName="db_activitiesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_activities" Member="tbl_activities">
+    <Type Name="tbl_activity">
+      <Column Name="activity_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="activity_name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tbl_activity_tbl_vessel_activity" Member="tbl_vessel_activities" ThisKey="activity_id" OtherKey="activity_id" Type="tbl_vessel_activity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_vessels" Member="tbl_vessels">
+    <Type Name="tbl_vessel">
+      <Column Name="vessel_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vessel_name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="vessel_class" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tbl_vessel_tbl_vessel_activity" Member="tbl_vessel_activities" ThisKey="vessel_id" OtherKey="vessel_id" Type="tbl_vessel_activity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_vessel_activities" Member="tbl_vessel_activities">
+    <Type Name="tbl_vessel_activity">
+      <Column Name="vessel_act_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vessel_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="activity_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="longitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="date_activity" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="date_created" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="date_updated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tbl_activity_tbl_vessel_activity" Member="tbl_activity" ThisKey="activity_id" OtherKey="activity_id" Type="tbl_activity" IsForeignKey="true" />
+      <Association Name="tbl_vessel_tbl_vessel_activity" Member="tbl_vessel" ThisKey="vessel_id" OtherKey="vessel_id" Type="tbl_vessel" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

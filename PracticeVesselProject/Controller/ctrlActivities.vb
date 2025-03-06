@@ -50,6 +50,8 @@ Public Class ctrlActivities
             .txtLat.Value = mdlVesAct.latitude
             .txtLong.Value = mdlVesAct.longitude
             .txtDec.Text = mdlVesAct.description
+            .Text = "Save Info"
+            .LabelControl1.Text = "Save Info"
             .btnCreate.Text = "Save"
             .action = "Saved"
             .Show()
@@ -57,45 +59,28 @@ Public Class ctrlActivities
     End Sub
 
     Sub Save()
-        If isNew Then
-            Using ts As New TransactionScope()
-                Try
-                    With mdlVesAct
-                        .activity_id = CInt(frmAA.lueAct.EditValue)
-                        .vessel_id = CInt(frmAA.lueVessel.EditValue)
-                        .location = frmAA.cbLoc.Text
-                        .date_activity = CDate(frmAA.dateAct.EditValue)
-                        .longitude = CDec(frmAA.txtLong.EditValue)
-                        .latitude = CDec(frmAA.txtLat.EditValue)
-                        .description = frmAA.txtDec.Text
+        Using ts As New TransactionScope()
+            Try
+                With mdlVesAct
+                    .activity_id = CInt(frmAA.lueAct.EditValue)
+                    .vessel_id = CInt(frmAA.lueVessel.EditValue)
+                    .location = frmAA.cbLoc.Text
+                    .date_activity = CDate(frmAA.dateAct.EditValue)
+                    .longitude = CDec(frmAA.txtLong.EditValue)
+                    .latitude = CDec(frmAA.txtLat.EditValue)
+                    .description = frmAA.txtDec.Text
+                    If isNew Then
                         .Add()
-                    End With
-
-                    ts.Complete()
-                Catch ex As Exception
-                    MessageBox.Show("Error: " & ex.Message)
-                End Try
-            End Using
-        Else
-            Using ts As New TransactionScope()
-                Try
-                    With mdlVesAct
-                        .activity_id = CInt(frmAA.lueAct.EditValue)
-                        .vessel_id = CInt(frmAA.lueVessel.EditValue)
-                        .location = frmAA.cbLoc.Text
-                        .date_activity = CDate(frmAA.dateAct.EditValue)
-                        .longitude = CDec(frmAA.txtLong.EditValue)
-                        .latitude = CDec(frmAA.txtLat.EditValue)
-                        .description = frmAA.txtDec.Text
+                    Else
                         .Save()
-                    End With
+                    End If
+                End With
 
-                    ts.Complete()
-                Catch ex As Exception
-                    MessageBox.Show("Error: " & ex.Message)
-                End Try
-            End Using
-        End If
+                ts.Complete()
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
     End Sub
 
     Sub loadCombos()

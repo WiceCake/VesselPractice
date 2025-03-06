@@ -47,4 +47,18 @@ Partial Public Class mainFrm
             xtratab.TabPages(inTab).Show()
         End If
     End Sub
+
+    Private Sub xtratab_CloseButtonClick(sender As Object, e As EventArgs) Handles xtratab.CloseButtonClick
+        Dim page As DevExpress.XtraTab.XtraTabPage = TryCast(xtratab.SelectedTabPage, DevExpress.XtraTab.XtraTabPage)
+
+        If page IsNot Nothing Then
+            Dim ucToRemove = ucList.FirstOrDefault(Function(uc) uc.Parent Is page)
+
+            If ucToRemove IsNot Nothing Then
+                ucList.Remove(ucToRemove)
+            End If
+
+            xtratab.TabPages.Remove(page)
+        End If
+    End Sub
 End Class

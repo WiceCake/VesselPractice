@@ -1,7 +1,8 @@
 ﻿Imports DevExpress.XtraEditors
 Imports System.Text
-Public Class frmAddActivity
+Public Class frmActivity
     Private ctrlA As ctrlActivities
+    Public action As String
 
     Sub New(ByRef ctrl As ctrlActivities)
 
@@ -19,12 +20,11 @@ Public Class frmAddActivity
         Dim location = validateField(cbLoc)
         Dim latitude = validateField(txtLat)
         Dim longitude = validateField(txtLong)
-        Dim description = validateField(txtDec)
 
         If actDate AndAlso vessel AndAlso activity AndAlso location AndAlso latitude AndAlso _
-            longitude AndAlso description Then
+            longitude Then
             ctrlA.Save()
-            successCreateMessage()
+            successCreateMessage(action)
             Me.Close()
         Else
             Dim builder As New StringBuilder
@@ -34,7 +34,6 @@ Public Class frmAddActivity
             If Not location Then builder.Append("Location").AppendLine()
             If Not latitude Then builder.Append("Latitude").AppendLine()
             If Not longitude Then builder.Append("Longitude").AppendLine()
-            If Not description Then builder.Append("Description").AppendLine()
             Dim fields As String = builder.ToString()
             requiredMessage(fields)
         End If

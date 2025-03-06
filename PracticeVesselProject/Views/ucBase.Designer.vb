@@ -20,7 +20,9 @@ Partial Class ucBase
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.dFrom = New DevExpress.XtraEditors.DateEdit()
         Me.btnFind = New DevExpress.XtraEditors.SimpleButton()
         Me.dTo = New DevExpress.XtraEditors.DateEdit()
@@ -32,10 +34,11 @@ Partial Class ucBase
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dFrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dTo.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,11 +50,12 @@ Partial Class ucBase
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Controls.Add(Me.dFrom)
         Me.LayoutControl1.Controls.Add(Me.btnFind)
@@ -66,6 +70,17 @@ Partial Class ucBase
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.ImageOptions.Image = Global.PracticeVesselProject.My.Resources.Resources.reload_16x16
+        Me.SimpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter
+        Me.SimpleButton1.Location = New System.Drawing.Point(1052, 44)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(89, 41)
+        Me.SimpleButton1.StyleController = Me.LayoutControl1
+        Me.SimpleButton1.TabIndex = 10
+        Me.SimpleButton1.Text = "Refresh"
+        '
         'GridControl1
         '
         Me.GridControl1.Location = New System.Drawing.Point(12, 89)
@@ -74,6 +89,11 @@ Partial Class ucBase
         Me.GridControl1.Size = New System.Drawing.Size(1129, 476)
         Me.GridControl1.TabIndex = 9
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
         '
         'dFrom
         '
@@ -84,16 +104,17 @@ Partial Class ucBase
         Me.dFrom.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dFrom.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.ClassicNew
         Me.dFrom.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.[False]
-        Me.dFrom.Size = New System.Drawing.Size(181, 22)
+        Me.dFrom.Size = New System.Drawing.Size(177, 22)
         Me.dFrom.StyleController = Me.LayoutControl1
         Me.dFrom.TabIndex = 8
         '
         'btnFind
         '
         Me.btnFind.ImageOptions.Image = Global.PracticeVesselProject.My.Resources.Resources.search_16x16
-        Me.btnFind.Location = New System.Drawing.Point(384, 44)
+        Me.btnFind.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter
+        Me.btnFind.Location = New System.Drawing.Point(380, 44)
         Me.btnFind.Name = "btnFind"
-        Me.btnFind.Size = New System.Drawing.Size(108, 41)
+        Me.btnFind.Size = New System.Drawing.Size(89, 41)
         Me.btnFind.StyleController = Me.LayoutControl1
         Me.btnFind.TabIndex = 7
         Me.btnFind.Text = "Search"
@@ -101,7 +122,7 @@ Partial Class ucBase
         'dTo
         '
         Me.dTo.EditValue = Nothing
-        Me.dTo.Location = New System.Drawing.Point(197, 63)
+        Me.dTo.Location = New System.Drawing.Point(193, 63)
         Me.dTo.Name = "dTo"
         Me.dTo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dTo.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -126,7 +147,7 @@ Partial Class ucBase
         '
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem3, Me.EmptySpaceItem2, Me.LayoutControlItem4, Me.LayoutControlItem2, Me.LayoutControlItem5})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem3, Me.EmptySpaceItem2, Me.LayoutControlItem4, Me.LayoutControlItem2, Me.LayoutControlItem5, Me.LayoutControlItem6})
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1153, 577)
         Me.LayoutControlGroup1.TextVisible = False
@@ -143,7 +164,7 @@ Partial Class ucBase
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.dTo
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(185, 32)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(181, 32)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(187, 45)
         Me.LayoutControlItem3.Text = "Date to"
@@ -153,18 +174,18 @@ Partial Class ucBase
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(484, 32)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(461, 32)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(649, 45)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(579, 45)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.btnFind
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(372, 32)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(368, 32)
         Me.LayoutControlItem4.MinSize = New System.Drawing.Size(93, 31)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(112, 45)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(93, 45)
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem4.TextVisible = False
@@ -174,7 +195,7 @@ Partial Class ucBase
         Me.LayoutControlItem2.Control = Me.dFrom
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 32)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(185, 45)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(181, 45)
         Me.LayoutControlItem2.Text = "Date From"
         Me.LayoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(60, 16)
@@ -188,10 +209,16 @@ Partial Class ucBase
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextVisible = False
         '
-        'GridView1
+        'LayoutControlItem6
         '
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
+        Me.LayoutControlItem6.Control = Me.SimpleButton1
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(1040, 32)
+        Me.LayoutControlItem6.MinSize = New System.Drawing.Size(93, 31)
+        Me.LayoutControlItem6.Name = "LayoutControlItem6"
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(93, 45)
+        Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem6.TextVisible = False
         '
         'ucBase
         '
@@ -203,6 +230,7 @@ Partial Class ucBase
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dFrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dFrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dTo.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -214,7 +242,7 @@ Partial Class ucBase
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -232,5 +260,7 @@ Partial Class ucBase
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
 
 End Class

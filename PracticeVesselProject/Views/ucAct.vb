@@ -10,6 +10,7 @@ Public Class ucAct
 
         ' Add any initialization after the InitializeComponent() call.
         MyBase.title = title
+        MyBase.indexField = "vessel_activities_id"
         LabelControl1.Text = title
     End Sub
 
@@ -48,9 +49,12 @@ Public Class ucAct
 
     End Sub
 
-    Sub editGrid(bandedView As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView)
+    Public Overrides Sub LoadRecord(ByVal recordID As Integer)
+        Dim ca As New ctrlActivities(recordID)
+        refreshData()
+    End Sub
 
-        
+    Sub editGrid(bandedView As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView)
 
         bandedView.PopulateColumns()
         bandedView.RefreshData()
@@ -61,7 +65,7 @@ Public Class ucAct
         Dim locationBand = New DevExpress.XtraGrid.Views.BandedGrid.GridBand With {.Caption = "Location & Coordinates"}
         Dim otherBand = New DevExpress.XtraGrid.Views.BandedGrid.GridBand With {.Caption = "Other Information"}
 
-        AddToBand(bandedView, activityBand, "ActivityID", "ID")
+        AddToBand(bandedView, activityBand, "ID", "ID")
         AddToBand(bandedView, activityBand, "ActivityName", "Activity Name")
         AddToBand(bandedView, activityBand, "DateActivity", "Date of Activity")
         AddToBand(bandedView, locationBand, "Location", "Location")
@@ -77,6 +81,9 @@ Public Class ucAct
         bandedView.Bands.AddRange({activityBand, locationBand, otherBand})
 
         bandedView.ExpandAllGroups()
+        bandedView.BestFitColumns()
+        bandedView.OptionsBehavior.Editable = False
+        bandedView.OptionsSelection.EnableAppearanceFocusedRow = True
     End Sub
 
     Sub AddToBand(ByRef view As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView,

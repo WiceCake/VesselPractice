@@ -107,10 +107,10 @@
     <Compile Include="Views\ucAct.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\frmAddActivity.Designer.vb">
-      <DependentUpon>frmAddActivity.vb</DependentUpon>
+    <Compile Include="Views\frmActivity.Designer.vb">
+      <DependentUpon>frmActivity.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmAddActivity.vb">
+    <Compile Include="Views\frmActivity.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\ucBase.Designer.vb">
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="Views\ucAct.resx">
       <DependentUpon>ucAct.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmAddActivity.resx">
-      <DependentUpon>frmAddActivity.vb</DependentUpon>
+    <EmbeddedResource Include="Views\frmActivity.resx">
+      <DependentUpon>frmActivity.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ucBase.resx">
       <DependentUpon>ucBase.vb</DependentUpon>
@@ -182,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search 16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload 16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

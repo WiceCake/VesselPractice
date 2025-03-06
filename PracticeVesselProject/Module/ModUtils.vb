@@ -5,8 +5,8 @@ Module ModUtils
         XtraMessageBox.Show("Required Fields: " + vbNewLine + fields, APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning)
     End Sub
 
-    Sub successCreateMessage()
-        XtraMessageBox.Show("Created Successfully!", APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information)
+    Sub successCreateMessage(ByVal action As String)
+        XtraMessageBox.Show(action & " Successfully! Please refresh the page", APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Function validateField(ByRef control As DateEdit) As Boolean

@@ -7,7 +7,7 @@ D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVes
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.exe
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.pdb
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\bin\Debug\PracticeVesselProject.exe.config
-D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.frmAddActivity.resources
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.vbprojResolveAssemblyReference.cache
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.ucBase.resources
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.ucAct.resources
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.frmActivity.resources

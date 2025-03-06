@@ -169,7 +169,7 @@ Partial Public Class tbl_activity
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_created", DbType:="Date")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_created", DbType:="Date", IsDbGenerated:=true)>  _
 	Public Property date_created() As System.Nullable(Of Date)
 		Get
 			Return Me._date_created
@@ -320,7 +320,7 @@ Partial Public Class tbl_vessel
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_created", DbType:="Date")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_created", DbType:="Date", IsDbGenerated:=true)>  _
 	Public Property date_created() As System.Nullable(Of Date)
 		Get
 			Return Me._date_created
@@ -397,9 +397,9 @@ Partial Public Class tbl_vessel_activity
 	
 	Private _date_activity As System.Nullable(Of Date)
 	
-	Private _date_created As System.Nullable(Of Date)
+	Private _date_created As Date
 	
-	Private _date_updated As System.Nullable(Of Date)
+	Private _date_updated As Date
 	
 	Private _tbl_activity As EntityRef(Of tbl_activity)
 	
@@ -444,11 +444,11 @@ Partial Public Class tbl_vessel_activity
     End Sub
     Partial Private Sub Ondate_activityChanged()
     End Sub
-    Partial Private Sub Ondate_createdChanging(value As System.Nullable(Of Date))
+    Partial Private Sub Ondate_createdChanging(value As Date)
     End Sub
     Partial Private Sub Ondate_createdChanged()
     End Sub
-    Partial Private Sub Ondate_updatedChanging(value As System.Nullable(Of Date))
+    Partial Private Sub Ondate_updatedChanging(value As Date)
     End Sub
     Partial Private Sub Ondate_updatedChanged()
     End Sub
@@ -598,13 +598,14 @@ Partial Public Class tbl_vessel_activity
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_created", DbType:="Date")>  _
-	Public Property date_created() As System.Nullable(Of Date)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_created", DbType:="Date NOT NULL", IsDbGenerated:=true)>  _
+	Public Property date_created() As Date
 		Get
 			Return Me._date_created
 		End Get
 		Set
-			If (Me._date_created.Equals(value) = false) Then
+			If ((Me._date_created = value)  _
+						= false) Then
 				Me.Ondate_createdChanging(value)
 				Me.SendPropertyChanging
 				Me._date_created = value
@@ -614,13 +615,14 @@ Partial Public Class tbl_vessel_activity
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_updated", DbType:="Date")>  _
-	Public Property date_updated() As System.Nullable(Of Date)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_date_updated", DbType:="Date NOT NULL", IsDbGenerated:=true)>  _
+	Public Property date_updated() As Date
 		Get
 			Return Me._date_updated
 		End Get
 		Set
-			If (Me._date_updated.Equals(value) = false) Then
+			If ((Me._date_updated = value)  _
+						= false) Then
 				Me.Ondate_updatedChanging(value)
 				Me.SendPropertyChanging
 				Me._date_updated = value

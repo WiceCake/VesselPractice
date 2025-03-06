@@ -57,8 +57,6 @@
             .longitude = longitude
             .description = description
             .date_activity = date_activity
-            .date_created = date_created
-            .date_updated = date_updated
         End With
 
         dc.tbl_vessel_activities.InsertOnSubmit(va)
@@ -66,7 +64,26 @@
         vessel_activities_id = va.vessel_act_id
     End Sub
 
-    Function GetByDate(ByVal startDate As Date, ByVal endDate As Date) As List(Of VesselActivities)
+    Sub Save()
+        Dim va = From i In dc.tbl_vessel_activities Where i.vessel_act_id = vessel_activities_id Select i
+
+        For Each i In va
+            i.vessel_id = vessel_id
+            i.activity_id = activity_id
+            i.location = location
+            i.latitude = latitude
+            i.longitude = longitude
+            i.description = description
+            i.date_activity = date_activity
+            dc.SubmitChanges()
+        Next
+    End Sub
+
+    Function GetByDate(Optional ByVal startDate As Date = #1/1/1900#, Optional ByVal endDate As Date = Nothing) As List(Of VesselActivities)
+        If endDate = Nothing Then
+            endDate = Date.Now
+        End If
+
         Dim vaList As New List(Of VesselActivities)
 
         Dim acts = From va In dc.tbl_vessel_activities

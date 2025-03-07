@@ -75,7 +75,11 @@ Public Class ucAct
         AddToBand(bandedView, otherBand, "Description", "Description")
 
         For Each col As DevExpress.XtraGrid.Columns.GridColumn In bandedView.Columns
-            col.Visible = True
+            If col.Caption IsNot "ID" Then
+                col.Visible = True
+            Else
+                col.Visible = False
+            End If
         Next
 
         bandedView.Bands.AddRange({activityBand, locationBand, otherBand})

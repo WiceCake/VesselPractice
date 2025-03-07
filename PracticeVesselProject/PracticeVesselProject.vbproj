@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ctrlActivities.vb" />
+    <Compile Include="Controller\ctrlReports.vb" />
     <Compile Include="Data\dbActivities.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,6 +104,12 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Views\frmReport.Designer.vb">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\ucAct.Designer.vb">
       <DependentUpon>ucAct.vb</DependentUpon>
     </Compile>
@@ -127,6 +134,9 @@
     <Compile Include="Views\ucBase.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <EmbeddedResource Include="Views\frmReport.resx">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ucAct.resx">
       <DependentUpon>ucAct.vb</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +212,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\abacus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer 16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

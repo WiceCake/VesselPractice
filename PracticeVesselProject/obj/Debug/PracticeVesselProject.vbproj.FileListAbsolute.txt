@@ -11,3 +11,4 @@ D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVes
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.exe.licenses
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.exe
 D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.pdb
+D:\CRUD VB.NET\PracticeVesselProject\PracticeVesselProject\obj\Debug\PracticeVesselProject.frmReport.resources

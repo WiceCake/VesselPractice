@@ -25,7 +25,6 @@ Public Class ucActR
 
     End Sub
 
-
     Private Sub ConvertToPivotGrid()
 
         If GridControl1 IsNot Nothing Then
@@ -41,7 +40,7 @@ Public Class ucActR
 
             Dim fAct As New PivotGridField("Activities", PivotArea.RowArea)
             Dim fVes As New PivotGridField("Vessels", PivotArea.ColumnArea)
-            Dim fCount As New PivotGridField("VesselAct", PivotArea.DataArea) With {
+            Dim fCount As New PivotGridField("VesselActivties", PivotArea.DataArea) With {
                 .SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Count
             }
 
@@ -66,7 +65,7 @@ Public Class ucActR
                     i.vessel_activities_id,
                     .Vessels = i.GetVessel(vessels).vessel_name,
                     .Activities = i.GetActivity(activities).activity_name,
-                    .VesselAct = i.vessel_activities_id
+                    .VesselActivties = i.vessel_activities_id
                 }).ToList()
     End Function
 

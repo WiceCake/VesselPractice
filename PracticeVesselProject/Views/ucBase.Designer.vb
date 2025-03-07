@@ -229,7 +229,6 @@ Partial Class ucBase
         Me.Size = New System.Drawing.Size(1153, 577)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        Me.LayoutControl1.PerformLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dFrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()

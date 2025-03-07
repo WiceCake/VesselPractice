@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Text
-
+Imports DevExpress.XtraTab.ViewInfo
+Imports DevExpress.XtraTab
 
 Partial Public Class mainFrm
     Public ucList As New List(Of UserControl)
@@ -21,16 +22,12 @@ Partial Public Class mainFrm
     End Sub
 
     Private Function inTabs(ByVal type As String) As Integer
-        If ucList.Count = 0 Then
-            Return -1
-        End If
-
-        Dim thisTab = ucList.Where(Function(x) x.GetType().ToString = "DIC." + type)
-        If thisTab.Count = 0 Then
-            Return -1
-        End If
-
-        Return ucList.IndexOf(thisTab.First)
+        For i As Integer = 0 To ucList.Count - 1
+            If ucList(i).GetType().Name = type Then
+                Return i
+            End If
+        Next
+        Return -1
     End Function
 
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
@@ -60,16 +57,11 @@ Partial Public Class mainFrm
     End Sub
 
     Private Sub xtratab_CloseButtonClick(sender As Object, e As EventArgs) Handles xtratab.CloseButtonClick
-        Dim page As DevExpress.XtraTab.XtraTabPage = TryCast(xtratab.SelectedTabPage, DevExpress.XtraTab.XtraTabPage)
+        Dim arg As ClosePageButtonEventArgs = TryCast(e, ClosePageButtonEventArgs)
+        TryCast(arg.Page, XtraTabPage).PageVisible = False
+    End Sub
 
-        If page IsNot Nothing Then
-            Dim ucToRemove = ucList.FirstOrDefault(Function(uc) uc.Parent Is page)
-
-            If ucToRemove IsNot Nothing Then
-                ucList.Remove(ucToRemove)
-            End If
-
-            xtratab.TabPages.Remove(page)
-        End If
+    Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
+        Dim ctrl As New ctrlReports()
     End Sub
 End Class

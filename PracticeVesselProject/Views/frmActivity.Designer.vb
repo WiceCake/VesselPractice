@@ -304,13 +304,13 @@ Partial Class frmActivity
         '
         Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray"
         '
-        'frmAddActivity
+        'frmActivity
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(612, 335)
         Me.Controls.Add(Me.LayoutControl1)
-        Me.Name = "frmAddActivity"
+        Me.Name = "frmActivity"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Activity"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()

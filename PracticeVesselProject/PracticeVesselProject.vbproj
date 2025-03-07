@@ -45,6 +45,7 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v18.1" />
     <Reference Include="DevExpress.Data.v18.1" />
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v18.1.Core" />
     <Reference Include="DevExpress.Utils.v18.1" />
     <Reference Include="DevExpress.XtraBars.v18.1" />
@@ -52,6 +53,7 @@
     <Reference Include="DevExpress.XtraEditors.v18.1" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -113,6 +115,12 @@
     <Compile Include="Views\frmActivity.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\ucActR.Designer.vb">
+      <DependentUpon>ucActR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ucActR.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\ucBase.Designer.vb">
       <DependentUpon>ucBase.vb</DependentUpon>
     </Compile>
@@ -124,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmActivity.resx">
       <DependentUpon>frmActivity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ucActR.resx">
+      <DependentUpon>ucActR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ucBase.resx">
       <DependentUpon>ucBase.vb</DependentUpon>
@@ -185,6 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reload 16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abacus 16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abacus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -28,6 +28,7 @@
         Me.ribbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.ribbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
@@ -46,9 +47,9 @@
         'ribbonControl1
         '
         Me.ribbonControl1.ExpandCollapseItem.Id = 0
-        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2})
+        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3})
         Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl1.MaxItemId = 3
+        Me.ribbonControl1.MaxItemId = 4
         Me.ribbonControl1.Name = "ribbonControl1"
         Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.ribbonPage1})
         Me.ribbonControl1.Size = New System.Drawing.Size(1169, 181)
@@ -69,6 +70,14 @@
         Me.BarButtonItem2.Name = "BarButtonItem2"
         Me.BarButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
+        'BarButtonItem3
+        '
+        Me.BarButtonItem3.Caption = "Activity Reports"
+        Me.BarButtonItem3.Id = 3
+        Me.BarButtonItem3.ImageOptions.Image = Global.PracticeVesselProject.My.Resources.Resources.abacus
+        Me.BarButtonItem3.Name = "BarButtonItem3"
+        Me.BarButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+        '
         'ribbonPage1
         '
         Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1})
@@ -79,6 +88,7 @@
         '
         Me.ribbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
         Me.ribbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
+        Me.ribbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
         Me.ribbonPageGroup1.Name = "ribbonPageGroup1"
         Me.ribbonPageGroup1.Text = "Activity"
         '
@@ -164,4 +174,5 @@
     Friend WithEvents xtratab As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
 End Class

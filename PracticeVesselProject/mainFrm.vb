@@ -48,6 +48,17 @@ Partial Public Class mainFrm
         End If
     End Sub
 
+    Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
+        Dim title = "Activity Reports"
+        Dim inTab = inTabs("ucActR")
+        If inTab = -1 Then
+            Dim uc As New ucActR(title)
+            addTab(uc, title)
+        Else
+            xtratab.TabPages(inTab).Show()
+        End If
+    End Sub
+
     Private Sub xtratab_CloseButtonClick(sender As Object, e As EventArgs) Handles xtratab.CloseButtonClick
         Dim page As DevExpress.XtraTab.XtraTabPage = TryCast(xtratab.SelectedTabPage, DevExpress.XtraTab.XtraTabPage)
 

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ucAct
+Partial Class ucActR
     Inherits PracticeVesselProject.ucBase
 
     'UserControl overrides dispose to clean up the component list.
@@ -21,12 +21,12 @@ Partial Class ucAct
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'ucAct
+        'ucActR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Name = "ucAct"
-        Me.Size = New System.Drawing.Size(878, 484)
+        Me.Name = "ucActR"
+        Me.Size = New System.Drawing.Size(827, 415)
         Me.ResumeLayout(False)
 
     End Sub

@@ -79,6 +79,18 @@
         Next
     End Sub
 
+    Function GetRows() As List(Of VesselActivities)
+        Dim vaList As New List(Of VesselActivities)
+
+        Dim acts = From va In dc.tbl_vessel_activities Select va
+
+        For Each act In acts
+            vaList.Add(New VesselActivities(act, dc))
+        Next
+
+        Return vaList
+    End Function
+
     Function GetByDate(Optional ByVal startDate As Date = #1/1/1900#, Optional ByVal endDate As Date = Nothing) As List(Of VesselActivities)
         If endDate = Nothing Then
             endDate = Date.Now
